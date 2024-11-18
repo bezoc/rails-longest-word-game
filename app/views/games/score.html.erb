@@ -1,0 +1,11 @@
+<div class="container mt-5">
+  <h1 class="mb-3">Result</h1>
+  <% if !@included %>
+    <p class="text-danger">Sorry, but <strong><%= @word %></strong> can't be built out of <%= @letters.join(', ') %>.</p>
+  <% elsif !@valid_word %>
+    <p class="text-danger">Sorry, but <strong><%= @word %></strong> does not seem to be a valid English word...</p>
+  <% else %>
+    <p class="text-success">Congratulations! <strong><%= @word %></strong> is a valid English word!</p>
+  <% end %>
+  <a href="/new" class="btn btn-primary">Play again</a>
+</div>
